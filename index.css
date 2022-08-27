@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+
+:root{
+    /* ### Primary */
+
+--Soft-red: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+
+
+/* ### Neutral */
+
+--Dark-brown: hsl(25, 47%, 15%);
+--Medium-brown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Very-pale-orange: hsl(33, 100%, 98%);
+
+/* ## Typography */
+
+/* ### Body Copy */
+
+--Font-size: 18px;
+--ff-dm-sans: 'DM Sans', sans-serif;
+--fw-light:400;
+--fw-bold:700;
+}
+
+.attribution { font-size: 11px; text-align: center; bottom: 0;position: absolute;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+*{
+    font-family: var(--ff-dm-sans);
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+p{
+    font-size: var(--Font-size);
+}
+
+body{
+    background-color: var(--Cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    height: fit-content;
+    width: 23rem;
+ 
+}
+
+/* Top layer my balance styling */
+.balance {
+    margin-bottom: 1rem;
+    background-color: var(--Soft-red);
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    border-radius: 12px;
+}
+    .balance-with-text{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        gap: 5px;
+    }
+    .text-my-balance {
+        font-size: 12px;
+    }
+    .price {
+        font-weight: var(--fw-bold);
+        font-size: 18px;
+    }
+
+.this-month {
+    background-color: var(--Very-pale-orange);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+    .this-month h3 {
+        color: var(--Dark-brown);
+    }
+
+  /* ............
+    bar graph .
+    .............. */
+
+
+.graph {
+        display: flex;
+        gap: 1rem;
+        height: 9rem;
+    }
+    .bar-element {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5px;
+    }
+        .bar-element .bar{
+            width: 2rem;
+            background-color: var(--Soft-red);
+            border-radius: 5px;
+            position: relative;
+        }
+        .bar-element .label {
+            font-size: 12px;
+            color: var(--Medium-brown);
+        }
+    
+        .bar:hover {
+            background-color: hsla(10, 79%, 65%,0.6);
+        }
+    
+        /* Tooltip styling */
+
+        .bar .tooltip-text {
+            visibility: hidden;
+            font-size: 0.75rem;
+            width: 3rem;
+            background-color: var(--Dark-brown);
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            bottom: calc(100% + 5px);
+            left: 50%;
+            margin-left: -1.5rem;
+        }
+        .bar:hover .tooltip-text{
+            visibility: visible;
+        }
+    
+
+
+
+
+
+    /* bottom layer total this month styling */
+.total {
+    border-top: 1px solid hsla(28, 10%, 53%,0.2);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+    .total .text-light {
+        font-size: 12px;
+        color: var(--Medium-brown);
+    }
+    .total .price-hike {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .total .price-hike .total-price {
+        font-size: 2rem;
+        font-weight: var(--fw-bold);
+        color: var(--Dark-brown);
+    }
+    .total .price-hike .container-hike {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hike {
+        color: var(--Dark-brown);
+        font-weight: var(--fw-light);
+    }
+
+  
+
+
+@media only screen and (max-width:500px) {
+    body {
+        height: fit-content;
+    }
+    main {
+        width: 100%;
+        padding: 5%;
+        min-width: 320px;
+    }
+    .this-month {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .graph{
+        gap:0.7rem;
+        
+    }
+    .bar-element .bar{
+        width: 1.7rem;
+    }
+    .total{
+        width: 100%;
+    }
+    .total-price{
+        font-size: 25px;
+    }
+
+
+
+}
